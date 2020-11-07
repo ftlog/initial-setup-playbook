@@ -1,8 +1,8 @@
-# さくらVPS(CentOS8)　初期セットアップPlaybook
+# さくらのVPS(CentOS8)　初期セットアップPlaybook
 
 ## 概要
 
-[さくらVPS](https://vps.sakura.ad.jp/)のCentOS8にて初期セットアップをするためのAnsible Playbookを作成しました。
+[さくらのVPS](https://vps.sakura.ad.jp/)のCentOS8にて初期セットアップをするためのAnsible Playbookを作成しました。
 
 以下の設定に対応しています。
 
@@ -17,7 +17,7 @@
 ### group_vars/servers.yml
 
 接続情報を記載します。  
-パスワードを使用する場合は、ansible_ssh_passを、ポート番号を指定する場合は、ansible_ssh_portを使用してください。
+パスワードを使用する場合はansible_ssh_passを、ポート番号を指定する場合は、ansible_ssh_portを使用してください。
 ```yaml
 ansible_ssh_user: root
 ansible_ssh_private_key_file: /path/to/id_rsa
