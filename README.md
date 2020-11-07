@@ -14,13 +14,13 @@
 
 ## 動作確認環境
 
-<コントロールノード>
-ansible 2.10.2
-Python 3.7.3
-$ ansible-galaxy collection install ansible.posix
+<コントロールノード>  
+ansible 2.10.2  
+Python 3.7.3  
+$ ansible-galaxy collection install ansible.posix  
 
-<ターゲットノード>
-さくらのVPS 標準OS CentOS8 x86_64
+<ターゲットノード>  
+さくらのVPS 標準OS CentOS8 x86_64  
 
 ## 設定方法
 
@@ -57,6 +57,16 @@ network_list:
   ip4: 192.168.0.10/24
   autoconnect: yes
 ```
+ファイアウォールの設定を行う場合は、port_list、service_listを記載します。  
+使用しない場合は、コメントアウトしてください。
+
+```yaml
+# port_list:
+
+service_list:
+- ssh
+```
+
 
 ※ その他、ホストごとに固有の設定がある場合は、group_varsではなく、host_varsに記載してください。
 
