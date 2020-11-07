@@ -1,0 +1,21 @@
+---
+- name: set firewall (service)
+  ansible.posix.firewalld:
+    service: "{{ item }}"
+    permanent: yes
+    state: enabled
+  loop: "{{ service_list }}"
+  when: service_list is defined
+
+- name: set firewall (port)
+  ansible.posix.firewalld:
+    port: "{{ item }}"
+    permanent: yes
+    state: enabled
+  loop: "{{ port_list }}"
+  when: port_list is defined
+
+- name: restart firewalld
+  service:
+    name: firewalld
+    state: restarted

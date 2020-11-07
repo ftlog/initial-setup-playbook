@@ -5,9 +5,9 @@
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
     backup: yes
-  notify: restart sshd service
   loop:
   - regexp: '^#?PermitRootLogin'
     line: 'PermitRootLogin no'
   - regexp: '^(#\s*)?PasswordAuthentication '
     line: 'PasswordAuthentication no'
+  notify: restart sshd service

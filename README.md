@@ -12,6 +12,16 @@
 1. ネットワーク設定
 1. ファイアウォール設定
 
+## 動作確認環境
+
+<コントロールノード>
+ansible 2.10.2
+Python 3.7.3
+$ ansible-galaxy collection install ansible.posix
+
+<ターゲットノード>
+さくらのVPS 標準OS CentOS8 x86_64
+
 ## 設定方法
 
 ### group_vars/servers.yml
