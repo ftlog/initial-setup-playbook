@@ -4,5 +4,5 @@
   - { role: hostname, when: hostname is defined }
   - { role: user, when: user_list is defined }
   - ssh
-  - network
+  - { role: network, network_list is defined }
   - firewall

@@ -1,2 +1,8 @@
 ---
 hostname: server1.example.com
+
+network_list:
+- conn_name: System ens4
+  ifname: ens4
+  ip4: 192.168.0.10/24
+  autoconnect: yes

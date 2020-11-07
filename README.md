@@ -38,6 +38,15 @@ user_list:
 ```yaml
 hostname: server1.example.com
 ```
+ネットワーク設定を行う場合は、network_listを記載します。
+
+```yaml
+network_list:
+- conn_name: System ens4
+  ifname: ens4
+  ip4: 192.168.0.10/24
+  autoconnect: yes
+```
 
 ※ その他、ホストごとに固有の設定がある場合は、group_varsではなく、host_varsに記載してください。
 
