@@ -33,7 +33,7 @@ user_list:
 ```
 ### host_vars/xxx.xxx.xxx.xxx.yml
 
-ホスト名を設定する場合は、記載します。  
+ホスト名を設定する場合は、hostnameを記載します。  
 (未定義の場合はスキップします。)
 ```yaml
 hostname: server1.example.com
