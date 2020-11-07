@@ -1,0 +1,8 @@
+---
+- hosts: servers
+  roles:
+  - { role: hostname, when: hostname is defined }
+  - { role: user, when: user_list is defined }
+  - ssh
+  - network
+  - firewall

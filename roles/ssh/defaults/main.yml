@@ -1,0 +1,6 @@
+---
+# Where is sshd config is located at
+sshd_config: /etc/ssh/sshd_config
+
+# The name of sshd service
+sshd_service: sshd.service

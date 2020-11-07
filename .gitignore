@@ -1,0 +1,5 @@
+hosts
+/log/*
+!/log/.gitkeep
+/group_vars/*.yml
+/host_vars/*.yml

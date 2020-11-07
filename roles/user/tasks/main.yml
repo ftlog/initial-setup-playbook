@@ -1,0 +1,22 @@
+---
+- name: add the user
+  user:
+    name: "{{ item.name }}"
+    password: "{{ item.password | password_hash('sha512') }}"
+    groups: "{{ item.groups }}"
+  loop: "{{ user_list }}"
+
+- name: create .ssh directory
+  file:
+    path: "/home/{{ item.name }}/.ssh"
+    state: directory
+    owner: "{{ item.name }}"
+    group: "{{ item.name }}"
+    mode: 0700
+  loop: "{{ user_list }}"
+  
+- name: add authorized_key
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ lookup('file', item.pub_key) }}"
+  loop: "{{ user_list }}"
