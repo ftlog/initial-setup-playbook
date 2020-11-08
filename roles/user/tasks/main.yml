@@ -1,5 +1,6 @@
 ---
 - name: add the user
+  no_log: true
   user:
     name: "{{ item.name }}"
     password: "{{ item.password | password_hash('sha512') }}"
@@ -7,6 +8,7 @@
   loop: "{{ user_list }}"
 
 - name: create .ssh directory
+  no_log: true
   file:
     path: "/home/{{ item.name }}/.ssh"
     state: directory
@@ -16,6 +18,7 @@
   loop: "{{ user_list }}"
   
 - name: add authorized_key
+  no_log: true
   authorized_key:
     user: "{{ item.name }}"
     key: "{{ lookup('file', item.pub_key) }}"
