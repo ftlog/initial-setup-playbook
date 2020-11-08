@@ -7,3 +7,4 @@
   - { role: network, when: network_list is defined }
   - role: firewall
     when: service_list is defined or port_list is defined
+  - locale

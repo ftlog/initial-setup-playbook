@@ -1,0 +1,6 @@
+---
+- name: install language Pack
+  dnf:
+    name:
+      - glibc-langpack-ja
+    state: present
