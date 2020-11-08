@@ -73,7 +73,6 @@ service_list:
 - ssh
 ```
 
-
 ※ ホストごとに固有の設定がある場合は、group_varsではなく、host_varsに記載してください。
 
 ### hosts
