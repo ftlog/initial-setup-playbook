@@ -1,0 +1,5 @@
+---
+- name: all update
+  dnf:
+    name: "*"
+    state: latest
