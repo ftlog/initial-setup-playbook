@@ -19,3 +19,4 @@
   service:
     name: firewalld
     state: restarted
+    enabled: yes
