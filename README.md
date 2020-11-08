@@ -68,7 +68,7 @@ service_list:
 ```
 
 
-※ その他、ホストごとに固有の設定がある場合は、group_varsではなく、host_varsに記載してください。
+※ ホストごとに固有の設定がある場合は、group_varsではなく、host_varsに記載してください。
 
 ### hosts
 
