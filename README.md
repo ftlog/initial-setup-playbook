@@ -92,6 +92,7 @@ git cloneをします。
 
 ```bash
 $ git clone https://github.com/ftlog/sakuravps-initial-setup-centos8
+$ cd sakuravps-initial-setup-centos8
 ```
 
 設定が終わった後、以下のコマンドを実行します。
