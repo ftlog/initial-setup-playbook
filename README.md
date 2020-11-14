@@ -33,7 +33,8 @@ $ ansible-galaxy collection install ansible.posix
 ### group_vars/servers.yml
 
 接続情報を記載します。  
-パスワードを使用する場合はansible_ssh_passを、ポート番号を指定する場合は、ansible_ssh_portを使用してください。
+パスワードを使用する場合はansible_ssh_passを、ポート番号を指定する場合は、ansible_ssh_portを使用してください。  
+rootユーザ以外の場合、becomeされるため、ansible_become_passを指定してください。
 ```yaml
 ansible_ssh_user: root
 ansible_ssh_private_key_file: /path/to/id_rsa
