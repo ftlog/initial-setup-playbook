@@ -6,3 +6,8 @@ network_list:
   ifname: ens4
   ip4: 192.168.0.10/24
   autoconnect: yes
+
+# port_list:
+
+service_list:
+- ssh
