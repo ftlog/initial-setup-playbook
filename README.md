@@ -88,9 +88,16 @@ IPアドレスまたは名前解決可能なホスト名を指定します。
 
 ## 使い方
 
+git cloneをします。
+
+```
+$ git clone https://github.com/ftlog/sakuravps-initial-setup-centos8
+$ cd sakuravps-initial-setup-centos8
+```
+
 設定が終わった後、以下のコマンドを実行します。
 
-```bash
+```
 $ ansible-playbook site.yml
 ```
 ## ライセンス
