@@ -1,5 +1,6 @@
 ---
 - name: all update
+  become: "{{ is_become }}"
   dnf:
     name: "*"
     state: latest

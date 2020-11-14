@@ -1,5 +1,6 @@
 ---
 - name: setting sshd_config
+  become: "{{ is_become }}"
   lineinfile:
     dest: "{{ sshd_config }}"
     regexp: "{{ item.regexp }}"

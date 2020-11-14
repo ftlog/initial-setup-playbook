@@ -1,5 +1,6 @@
 ---
 - name: install needed network manager libs
+  become: "{{ is_become }}"
   dnf:
     name:
       - NetworkManager-libnm
@@ -8,6 +9,7 @@
     state: present
 
 - name: setup network
+  become: "{{ is_become }}"
   nmcli:
     conn_name: "{{ item.conn_name }}"
     ifname: "{{ item.ifname }}"

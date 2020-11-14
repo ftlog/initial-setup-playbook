@@ -1,6 +1,12 @@
 ---
 - hosts: servers
   gather_facts: no
+
+  pre_tasks:
+  - set_fact:
+      is_become:
+        "{% if ansible_ssh_user == 'root' %}no{% else %}yes{% endif %}"
+
   roles:
   - { role: hostname, when: hostname is defined }
   - { role: user, when: user_list is defined }

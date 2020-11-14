@@ -1,5 +1,6 @@
 ---
 - name: install language Pack
+  become: "{{ is_become }}"
   dnf:
     name:
       - glibc-langpack-ja

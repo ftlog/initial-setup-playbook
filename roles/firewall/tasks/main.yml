@@ -1,5 +1,6 @@
 ---
 - name: set firewall (service)
+  become: "{{ is_become }}"
   ansible.posix.firewalld:
     service: "{{ item }}"
     permanent: yes
@@ -8,6 +9,7 @@
   when: service_list is defined
 
 - name: set firewall (port)
+  become: "{{ is_become }}"
   ansible.posix.firewalld:
     port: "{{ item }}"
     permanent: yes
@@ -16,6 +18,7 @@
   when: port_list is defined
 
 - name: restart firewalld
+  become: "{{ is_become }}"
   service:
     name: firewalld
     state: restarted

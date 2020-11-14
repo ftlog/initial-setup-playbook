@@ -3,5 +3,6 @@
     msg: "{{ hostname }}"
 
 - name: Set a hostname
+  become: "{{ is_become }}"
   hostname:
     name: "{{ hostname }}"
