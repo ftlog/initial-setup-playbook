@@ -1,5 +1,5 @@
 ---
-- hosts: servers
+- hosts: all
   gather_facts: no
 
   pre_tasks:

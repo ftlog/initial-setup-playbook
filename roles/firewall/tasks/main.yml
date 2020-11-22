@@ -1,25 +1,6 @@
 ---
-- name: set firewall (service)
-  become: "{{ is_become }}"
-  ansible.posix.firewalld:
-    service: "{{ item }}"
-    permanent: yes
-    state: enabled
-  loop: "{{ service_list }}"
-  when: service_list is defined
+- include_tasks: set_firewall_2_9.yml
+  when: ansible_version.full is version('2.10.0', '<')
 
-- name: set firewall (port)
-  become: "{{ is_become }}"
-  ansible.posix.firewalld:
-    port: "{{ item }}"
-    permanent: yes
-    state: enabled
-  loop: "{{ port_list }}"
-  when: port_list is defined
-
-- name: restart firewalld
-  become: "{{ is_become }}"
-  service:
-    name: firewalld
-    state: restarted
-    enabled: yes
+- include_tasks: set_firewall_2_10.yml
+  when: ansible_version.full is version('2.10.0', '>=')
